@@ -14,7 +14,7 @@ import { OrderService } from './order.service';
 
 @UseInterceptors(ErrorHandlerInterceptor)
 @UseGuards(SocketGuard)
-@WebSocketGateway({ namespace: 'menu', cors: true })
+@WebSocketGateway({ namespace: '/api/menu', cors: true })
 export class MenuGateway {
   @WebSocketServer()
   private server: Server;

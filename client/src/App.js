@@ -9,8 +9,9 @@ import MenuItem from './components/menuItem';
 import Cart from './components/cart';
 
 export default function App() {
-  const HOST = 'http://127.0.0.1:3000';
-  const request = axios.create({ baseURL: HOST })
+  const HOST = 'https://menu.egorzakharov.live/api';
+  // const HOST = 'http://127.0.0.1:3000/api';
+  const request = axios.create({ baseURL: `${HOST}` })
   let socket;
   const [dishes, setDishes] = useState([]);
   const [selections, setSelections] = useState([]);
@@ -123,7 +124,7 @@ export default function App() {
         items={selections}
         onCartRemove={makeSelection}
       />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
